@@ -16,15 +16,18 @@ class OwnerView(View):
         return JsonResponse({'messasge':'created'}, status=201)    
 
     def get(self, request):
-        owners = Owner.objects.values()
+        owners = Owner.objects.all()
         results  = []
         for owner in owners:
+            pets = owner.pet_set.all().values('name', 'age')
+
             results.append(
                {
                    "name" : owner.name,
                    "age" : owner.age,
                    "email" : owner.email,
-               }
+                    "pet" : [pet for pet in pets ],
+                }
            )       
         return JsonResponse({'resutls':results}, status=200)        
 
