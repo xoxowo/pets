@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'member',
     'movies',
     'django_extensions',
+    'pizza',
+
 ]
 
 MIDDLEWARE = [
