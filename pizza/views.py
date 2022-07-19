@@ -5,7 +5,6 @@ from django.views import View
 
 from pizza.models import *
 
-
 class PizzaView(View):
     def post(self, request):
         data = json.loads(request.body)
@@ -34,7 +33,6 @@ class PizzaView(View):
             } 
             )
         return JsonResponse({'resutls':results}, status=200)   
-
 
 class ToppingView(View):
     def post(self, request):
