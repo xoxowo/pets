@@ -7,5 +7,7 @@ urlpatterns = [
     path('member', include('member.urls')),
     path('movies', include('movies.urls')),
     path('pizza', include('pizza.urls')),
+    path('users', include('users.urls')),
+    path('user', include('user.urls')), 
     
 ]
